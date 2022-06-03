@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./rock-paper-scissors.js" defer></script> 
+    <link rel="stylesheet" src="./style.css">
     <title>Document</title>
 </head>
 <body>
-    <script src="./rock-paper-scissors.js"></script> 
+    <h1>Rock Paper Scissors</h1>
+    
+    <div class="results">
+        <div class="result">Choose Your Weapon!</div>
+        <div class="selections">First to score 5 points wins the game</div>
+    </div>
+    
+    <div class="buttons">
+        <button onclick="playRound('rock', computerPlay())">Rock</button>
+        <button onclick="playRound('paper', computerPlay())">Paper</button>
+        <button onclick="playRound('scissors', computerPlay())">Scissors</button>
+    </div>
+    
+    <div class="scoreboard">
+        <div>
+            <p>You</p>
+            <div class="player-score">0</div>
+        </div>
+        <div>
+            <p>Computer</p>
+            <div class="computer-score">0</div>
+        </div>
+    </div>
 </body>
 </html>

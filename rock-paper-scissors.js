@@ -6,6 +6,12 @@ let computerContainer = document.querySelector('.computer-score');
 let playerSelectionContainer = document.querySelector('.player-img');
 let computerSelectionContainer = document.querySelector('.computer-img');
 
+let modal = document.querySelector('#modal-container');
+let span = document.querySelector('.close');
+let modalContent = document.querySelector('.modal-content > p');
+
+span.onclick = () => modal.style.display="none";
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -32,10 +38,10 @@ function updateChoices(playerSelection, computerSelection){
             playerSelectionContainer.textContent = '🪨';
             break;
         case 'Paper':
-            playerSelectionContainer.textContent = '✂️';
-            break;
-        case 'Scissors':
             playerSelectionContainer.textContent = '🗞️';
+            break;
+            case 'Scissors':
+            playerSelectionContainer.textContent = '✂️';
             break;
     }
     switch(computerSelection){
@@ -43,12 +49,22 @@ function updateChoices(playerSelection, computerSelection){
             computerSelectionContainer.textContent = '🪨';
             break;
         case 'Paper':
-            computerSelectionContainer.textContent = '✂️';
-            break;
-        case 'Scissors':
             computerSelectionContainer.textContent = '🗞️';
             break;
+            case 'Scissors':
+            computerSelectionContainer.textContent = '✂️';
+            break;
     }
+}
+
+function endGame(){
+    if (playerScore > computerScore){
+        modalContent.textContent = "Congratulations, you won!";
+    }
+    else{
+        modalContent.textContent = "Better luck next time!";
+    }
+    modal.style.display = "block";
 }
 
 function playRound(playerSelection, computerSelection){
@@ -73,4 +89,7 @@ function playRound(playerSelection, computerSelection){
     }
     
     updateScore();
+    if (playerScore == 5 || computerScore == 5) {
+        endGame()
+    }
 }

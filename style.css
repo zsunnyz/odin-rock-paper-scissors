@@ -1,6 +1,37 @@
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    padding: 10px 20%; 
+
     text-align: center;
     background-color: beige;
+}
+
+.selection-img {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    max-width: 800px;
+    
+    gap: 10px;
+}
+
+.selection-img > div {
+    flex: 1 1 0px;
+    font-size: larger;
+    border: 1px solid black;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 .modal{
     display: none; /* Hidden by default */

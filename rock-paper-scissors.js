@@ -1,16 +1,4 @@
-let resultContainer = document.querySelector('.result');
-let selectionsContainer = document.querySelector('.selections');
-let playerContainer = document.querySelector('.player-score');
-let computerContainer = document.querySelector('.computer-score');
-
-let playerSelectionContainer = document.querySelector('.player-img');
-let computerSelectionContainer = document.querySelector('.computer-img');
-
-let modal = document.querySelector('#modal-container');
-let span = document.querySelector('.close');
-let modalContent = document.querySelector('.modal-content > p');
-
-span.onclick = () => modal.style.display="none";
+document.querySelector('.close').onclick = () => document.querySelector('#modal-container').style.display="none";
 
 let playerScore = 0;
 let computerScore = 0;
@@ -28,46 +16,46 @@ function computerPlay(){
 }
 
 function updateScore() {
-    playerContainer.textContent = playerScore;
-    computerContainer.textContent = computerScore;
+    document.querySelector('.player-score').textContent = playerScore;
+    document.querySelector('.computer-score').textContent = computerScore;
 }
 
 function updateChoices(playerSelection, computerSelection){
     switch(playerSelection){
         case 'Rock':
-            playerSelectionContainer.textContent = '🪨';
+            document.querySelector('.player-img').textContent = '🪨';
             break;
         case 'Paper':
-            playerSelectionContainer.textContent = '🗞️';
+            document.querySelector('.player-img').textContent = '🗞️';
             break;
             case 'Scissors':
-            playerSelectionContainer.textContent = '✂️';
+            document.querySelector('.player-img').textContent = '✂️';
             break;
     }
     switch(computerSelection){
         case 'Rock':
-            computerSelectionContainer.textContent = '🪨';
+            document.querySelector('.computer-img').textContent = '🪨';
             break;
         case 'Paper':
-            computerSelectionContainer.textContent = '🗞️';
+            document.querySelector('.computer-img').textContent = '🗞️';
             break;
             case 'Scissors':
-            computerSelectionContainer.textContent = '✂️';
+            document.querySelector('.computer-img').textContent = '✂️';
             break;
     }
 }
 
 function endGame(){
     if (playerScore > computerScore){
-        modalContent.textContent = "Congratulations, you won!";
+        document.querySelector('.modal-content > p').textContent = "Congratulations, you won!";
     }
     else{
-        modalContent.textContent = "Better luck next time!";
+        document.querySelector('.modal-content > p').textContent = "Better luck next time!";
     }
     
     document.querySelector(".final-score").textContent = `${playerScore} : ${computerScore}`;
 
-    modal.style.display = "block";
+    document.querySelector('#modal-container').style.display = "block";
     document.querySelector('.result').textContent = "First to score 5 points wins the game";
     document.querySelector('.selections').textContent = "Choose Your Weapon!";
     playerScore = 0; computerScore=0;
@@ -81,17 +69,17 @@ function playRound(playerSelection, computerSelection){
     updateChoices(playerSelection, computerSelection);
 
     if((playerSelection == 'Rock' && computerSelection == 'Scissors') || (playerSelection == 'Paper' && computerSelection == 'Rock') || (playerSelection == 'Scissors' && computerSelection == 'Paper')){
-        resultContainer.textContent = 'You Win!';
-        selectionsContainer.textContent = `${playerSelection} beats ${computerSelection}`;
+        document.querySelector('.result').textContent = 'You Win!';
+        document.querySelector('.player-score').textContent = `${playerSelection} beats ${computerSelection}`;
         playerScore += 1;
     }
     else if (playerSelection == computerSelection){
-        resultContainer.textContent = 'You drew!';
-        selectionsContainer.textContent = `You both chose ${playerSelection}`
+        document.querySelector('.result').textContent = 'You drew!';
+        document.querySelector('.player-score').textContent = `You both chose ${playerSelection}`
     }
     else {
-        resultContainer.textContent = 'You Lose!';
-        selectionsContainer.textContent = `${playerSelection} beats ${computerSelection}`;
+        document.querySelector('.result').textContent = 'You Lose!';
+        document.querySelector('.player-score').textContent = `${playerSelection} beats ${computerSelection}`;
         computerScore += 1;
     }
     

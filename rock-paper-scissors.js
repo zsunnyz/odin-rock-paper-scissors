@@ -65,6 +65,8 @@ function endGame(){
         modalContent.textContent = "Better luck next time!";
     }
     modal.style.display = "block";
+    playerScore = 0; computerScore=0;
+    updateScore();
 }
 
 function playRound(playerSelection, computerSelection){

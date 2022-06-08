@@ -1,4 +1,8 @@
-.modal-container {
+body {
+    text-align: center;
+    background-color: beige;
+}
+.modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */

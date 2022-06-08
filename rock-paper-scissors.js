@@ -64,6 +64,9 @@ function endGame(){
     else{
         modalContent.textContent = "Better luck next time!";
     }
+    
+    document.querySelector(".final-score").textContent = `${playerScore} : ${computerScore}`;
+
     modal.style.display = "block";
     document.querySelector('.result').textContent = "First to score 5 points wins the game";
     document.querySelector('.selections').textContent = "Choose Your Weapon!";

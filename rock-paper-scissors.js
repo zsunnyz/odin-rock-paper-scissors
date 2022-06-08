@@ -65,6 +65,8 @@ function endGame(){
         modalContent.textContent = "Better luck next time!";
     }
     modal.style.display = "block";
+    document.querySelector('.result').textContent = "First to score 5 points wins the game";
+    document.querySelector('.selections').textContent = "Choose Your Weapon!";
     playerScore = 0; computerScore=0;
     updateScore();
 }

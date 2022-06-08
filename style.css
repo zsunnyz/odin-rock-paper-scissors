@@ -6,22 +6,31 @@ body {
     padding: 10px 20%; 
 
     text-align: center;
-    background-color: beige;
+    background-color: #282a36;
+    color: white;
+    font-size: large;
+}
+
+h1 {
+    color: #bd93f9;
+    font-size: xx-large;
 }
 
 .selection-img {
     display: flex;
     align-self: center;
+    gap: 10px;
     width: 100%;
     max-width: 800px;
-    
-    gap: 10px;
+    margin-bottom: 20px;
+
 }
 
 .selection-img > div {
     flex: 1 1 0px;
     font-size: larger;
-    border: 1px solid black;
+    border: 1px solid white;
+    color: #ff79c6;
     
     display: flex;
     flex-direction: column;
@@ -33,6 +42,15 @@ body {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+
+    .selection-img > div > p {
+        font-size: xx-large;
+    }
+
+.results {
+    margin: 20px;
+}
+
 .modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
